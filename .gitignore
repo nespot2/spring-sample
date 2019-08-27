@@ -35,3 +35,5 @@ out/
 /http
 
 /sql
+
+/src/main/generated/
