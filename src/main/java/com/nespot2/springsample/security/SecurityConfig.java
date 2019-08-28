@@ -1,9 +1,12 @@
-package com.nespot2.springsample;
+package com.nespot2.springsample.security;
 
+import com.nespot2.springsample.security.service.MemberSecurityService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.access.expression.SecurityExpressionHandler;
 import org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -14,7 +17,10 @@ import org.springframework.security.web.access.expression.DefaultWebSecurityExpr
 
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    private final MemberSecurityService memberSecurityService;
 
 
     public SecurityExpressionHandler expressionHandler() {
@@ -50,6 +56,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
     }
 
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(memberSecurityService);
+    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
