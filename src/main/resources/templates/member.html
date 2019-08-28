@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html layout:decorator="layout"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>member</title>
+</head>
+<body>
+<th:block layout:fragment="content">
+    <div>
+        <div>
+            <label for="member_name">이름</label>
+            <input type="text" name="" id="member_name">
+        </div>
+        <div>
+            <label for="member_email">email</label>
+            <input type="text" name="" id="member_email">
+        </div>
+        <div>
+            <label for="member_password">password</label>
+            <input type="password" name="" id="member_password">
+        </div>
+        <button>등록</button>
+
+    </div>
+</th:block>
+</body>
+</html>
