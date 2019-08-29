@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>hello world</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <script src="/js/fx.min.js" type="text/javascript"></script>
+    <script src="/js/fxd.min.js" type="text/javascript"></script>
 </head>
 <body>
-<header>header</header>
-
+<header>
+    header
+</header>
 <main>
-    <th:block th:layout="content">
-    </th:block>
+    <div layout:fragment="content" class="container-fluid"></div>
 </main>
-<footer>footer</footer>
+<footer>
+    footer
+</footer>
 </body>
 </html>

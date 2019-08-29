@@ -43,10 +43,12 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("com.querydsl:querydsl-jpa")
     implementation("org.springframework.boot:spring-boot-devtools")
+    implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok")
+
 }
 
 configure<JavaPluginConvention> {
