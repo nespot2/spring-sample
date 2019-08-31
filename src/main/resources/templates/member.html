@@ -8,7 +8,7 @@
 </head>
 <body>
 <th:block layout:fragment="content">
-    <div>
+    <div class="member">
         <div>
             <label for="member_name">이름</label>
             <input type="text" name="name" id="member_name">
@@ -21,9 +21,8 @@
             <label for="member_password">password</label>
             <input type="password" name="password" id="member_password">
         </div>
-        <button>등록</button>
+        <button id="member_btn">등록</button>
     </div>
-
     <script type="text/javascript" src="/js/ui/member.js"></script>
 </th:block>
 </body>

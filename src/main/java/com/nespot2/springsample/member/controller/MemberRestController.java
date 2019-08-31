@@ -1,5 +1,6 @@
 package com.nespot2.springsample.member.controller;
 
+import com.nespot2.springsample.api.domain.ApiResult;
 import com.nespot2.springsample.member.domain.dto.MemberDto;
 import com.nespot2.springsample.member.service.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -19,9 +20,9 @@ public class MemberRestController {
     private final MemberService memberService;
 
     @PostMapping
-    public ResponseEntity<String> create(@Valid @RequestBody MemberDto memberDto) {
+    public ResponseEntity<ApiResult> create(@Valid @RequestBody MemberDto memberDto) {
         memberService.createMember(memberDto);
-        return ResponseEntity.ok("created");
+        return ApiResult.ok().mapperResponseEntity();
     }
 
 }
