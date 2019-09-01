@@ -39,11 +39,15 @@
     function createMember(e) {
         _.go(
             createMemberWithPromise(),
-            ({code}) => {
-                if (code == 0) {
-                    alert("회원 등록!");
-                }
-            }
+            _.tap(
+                ({data}) => {
+                    if(data.code == 0){
+                        alert("회원 등록 완료!");
+                    }
+                    return $.qs(".signal");
+                },
+                loadingRemove
+            )
         ).catch(({response}) => {
             loadingRemove($.qs(".signal"));
             let data = response.data;
@@ -67,9 +71,10 @@
 
     function createMemberWithPromise() {
         loading($.qs(".member"));
-        const name = $.qs("#member_name");
-        const password = $.qs("#member_password");
-        const email = $.qs("#member_email");
+
+        const name = $.qs("#member_name").value;
+        const password = $.qs("#member_password").value;
+        const email = $.qs("#member_email").value;
 
         const data = {
             name, password, email
