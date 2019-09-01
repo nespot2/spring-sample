@@ -38,4 +38,12 @@ public enum Code {
     public boolean isBadRequest() {
         return this == BAD_REQUEST;
     }
+
+    public boolean isArgumentNotValid() {
+        return this == ARGUMENT_NOT_VALID;
+    }
+
+    public boolean isError() {
+        return this == ERROR;
+    }
 }
