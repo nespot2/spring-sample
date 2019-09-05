@@ -1,4 +1,6 @@
 
+APP_NAME=$1
+
 if [ $# -lt 1 ]; then
 	echo "usage: $PROG <host-name>"
 	ehco "	$PROG spring-sample"
@@ -41,6 +43,6 @@ function restart() {
     echo " * All updated."
 }
 
-deploy "$*"
+deploy "$APP_NAME"
 
-restart "$*"
+restart "$APP_NAME"

@@ -86,3 +86,8 @@ update() {
 
 LATEST_FILE="$(ls -1 $APP_DIR/$PROG-[0-9]*.jar | sort -r -u | head -n 1)"
 
+ln -sf $LATEST_FILE $JAR_FILE
+JAR_REAL_FILE=$(readlink -f -n "$JAR_FILE")
+
+$1
+
