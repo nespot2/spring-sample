@@ -7,6 +7,7 @@ if [ $# -lt 1 ]; then
   exit
 fi
 
+cd $(dirname $0)
 SCRIPT_DIR=$(pwd)
 BASE_DIR=$(dirname $SCRIPT_DIR)
 
@@ -63,7 +64,7 @@ start() {
 
   sleep 5
 
-  if kill -0 "$PID"; then
+  if kill -0 "$PID" >/dev/null 2>&1; then
     echo "$PID" >"$PID_FILE"
     echo " * Started successfully. $PID"
   else
