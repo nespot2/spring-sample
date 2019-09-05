@@ -37,3 +37,5 @@ out/
 /sql
 
 /src/main/generated/
+
+/src/main/resources/application-dev.yml
