@@ -32,3 +32,8 @@
 #### 배포도구
 - bash script를 이용한 jar 파일를 배포합니다.
 - 나중에는 배포 app을 이용할 예정입니다.
+
+
+### 서비스 url
+
+- https://www.lunc7h.com

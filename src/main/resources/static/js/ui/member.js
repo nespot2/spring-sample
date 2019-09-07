@@ -41,8 +41,9 @@
             createMemberWithPromise(),
             _.tap(
                 ({data}) => {
-                    if(data.code == 0){
+                    if (data.code == 0) {
                         alert("회원 등록 완료!");
+                        document.location.href = "/login";
                     }
                     return $.qs(".signal");
                 },

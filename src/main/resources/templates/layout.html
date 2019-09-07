@@ -11,9 +11,28 @@
     <script src="/js/axios.min.js" type="text/javascript"></script>
 </head>
 <body>
-<header>
-    header
+<header class="header">
+    <div th:if="${#authorization.expr('isAuthenticated()')}">
+        <ul>
+            <li>
+                <span th:text="${#authentication.name}"></span>
+            </li>
+            <li>
+                <a href="/logout" th:href="@{/logout}">Logout</a>
+            </li>
+            <li>
+                <a href="/dashboard">데시보드</a>
+            </li>
+        </ul>
+    </div>
+    <div th:unless="${#authorization.expr('isAuthenticated()')}">
+        <ul>
+            <li><a href="/login" th:href="@{/login}">Login</a></li>
+            <li><a href="/member" th:href="@{/member}">회원가입</a></li>
+        </ul>
+    </div>
 </header>
+
 <main>
     <div layout:fragment="content" class="container-fluid"></div>
 </main>
