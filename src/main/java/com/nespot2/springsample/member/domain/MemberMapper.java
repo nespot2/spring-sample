@@ -1,6 +1,6 @@
 package com.nespot2.springsample.member.domain;
 
-import com.nespot2.springsample.common.YesNo;
+import com.nespot2.springsample.common.domain.YesNo;
 import com.nespot2.springsample.member.domain.dto.MemberDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;

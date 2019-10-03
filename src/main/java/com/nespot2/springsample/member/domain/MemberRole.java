@@ -4,6 +4,4 @@ public enum MemberRole {
     USER,
     CORPORATION,
     MASTER;
-
-
 }

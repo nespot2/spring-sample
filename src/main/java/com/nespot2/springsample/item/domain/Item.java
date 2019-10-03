@@ -1,6 +1,6 @@
 package com.nespot2.springsample.item.domain;
 
-import com.nespot2.springsample.common.YesNo;
+import com.nespot2.springsample.common.domain.YesNo;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -40,11 +40,11 @@ public class Item {
     private OffsetDateTime created_at;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(nullable = false)
-    private Item item;
+    @JoinColumn(name = "item_category_id")
+    private ItemCategory itemCategory;
 
     @Builder
-    public Item(String name, int initQuantity, int releasedQuantity, int inventoryQuantity, YesNo quickDeliveryYn, OffsetDateTime modified_at, OffsetDateTime created_at, Item item) {
+    public Item(String name, int initQuantity, int releasedQuantity, int inventoryQuantity, YesNo quickDeliveryYn, OffsetDateTime modified_at, OffsetDateTime created_at, ItemCategory itemCategory) {
         this.name = name;
         this.initQuantity = initQuantity;
         this.releasedQuantity = releasedQuantity;
@@ -52,6 +52,6 @@ public class Item {
         this.quickDeliveryYn = quickDeliveryYn;
         this.modified_at = modified_at;
         this.created_at = created_at;
-        this.item = item;
+        this.itemCategory = itemCategory;
     }
 }

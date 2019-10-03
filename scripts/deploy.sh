@@ -26,7 +26,7 @@ deploy() {
     echo " * Deploy finished."
 }
 
-function restart() {
+restart() {
     echo " * Start updating..."
 
     while [ $# -gt 0 ]; do

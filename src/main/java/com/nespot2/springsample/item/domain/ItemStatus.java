@@ -1,5 +1,10 @@
 package com.nespot2.springsample.item.domain;
 
+import lombok.Getter;
+import lombok.ToString;
+
+@Getter
+@ToString
 public enum ItemStatus {
     PURCHASE_POSSIBLE("구매 가능"),
     DURING_DELIVERY("배송중"),
