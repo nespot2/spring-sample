@@ -19,10 +19,10 @@ public class ItemDetail {
     private String inventoryNumber;
 
     @Column(nullable = false)
-    private OffsetDateTime modified_at;
+    private OffsetDateTime modifiedAt;
 
     @Column(nullable = false)
-    private OffsetDateTime created_at;
+    private OffsetDateTime createdAt;
 
     @Enumerated(EnumType.STRING)
     private ItemStatus status;
@@ -32,10 +32,10 @@ public class ItemDetail {
     private Item item;
 
     @Builder
-    public ItemDetail(String inventoryNumber, OffsetDateTime modified_at, OffsetDateTime created_at, ItemStatus status, Item item) {
+    public ItemDetail(String inventoryNumber, OffsetDateTime modifiedAt, OffsetDateTime createdAt, ItemStatus status, Item item) {
         this.inventoryNumber = inventoryNumber;
-        this.modified_at = modified_at;
-        this.created_at = created_at;
+        this.modifiedAt = modifiedAt;
+        this.createdAt = createdAt;
         this.status = status;
         this.item = item;
     }

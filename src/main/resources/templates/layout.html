@@ -20,9 +20,6 @@
             <li>
                 <a href="/logout" th:href="@{/logout}">Logout</a>
             </li>
-            <li>
-                <a href="/dashboard">데시보드</a>
-            </li>
         </ul>
     </div>
     <div th:unless="${#authorization.expr('isAuthenticated()')}">

@@ -19,15 +19,15 @@ public class ItemCategory {
     private String name;
 
     @Column(nullable = false)
-    private OffsetDateTime modified_at;
+    private OffsetDateTime modifiedAt;
 
     @Column(nullable = false)
-    private OffsetDateTime created_at;
+    private OffsetDateTime createdAt;
 
     @Builder
-    public ItemCategory(String name, OffsetDateTime modified_at, OffsetDateTime created_at) {
+    public ItemCategory(String name, OffsetDateTime modifiedAt, OffsetDateTime createdAt) {
         this.name = name;
-        this.modified_at = modified_at;
-        this.created_at = created_at;
+        this.modifiedAt = modifiedAt;
+        this.createdAt = createdAt;
     }
 }

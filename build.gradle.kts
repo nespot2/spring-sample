@@ -43,6 +43,7 @@ dependencies {
     implementation("com.querydsl:querydsl-jpa")
     implementation("org.springframework.boot:spring-boot-devtools")
     implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect")
+    implementation("org.apache.commons:commons-lang3:3.7")
     implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity5")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
