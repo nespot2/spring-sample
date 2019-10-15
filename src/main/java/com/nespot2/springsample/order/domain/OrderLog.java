@@ -17,7 +17,7 @@ public class OrderLog {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
-    private Order order;
+    private SimpleOrder order;
 
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
@@ -26,7 +26,7 @@ public class OrderLog {
     private OffsetDateTime createdAt;
 
     @Builder
-    public OrderLog(Order order, OrderStatus orderStatus, OffsetDateTime createdAt) {
+    public OrderLog(SimpleOrder order, OrderStatus orderStatus, OffsetDateTime createdAt) {
         this.order = order;
         this.orderStatus = orderStatus;
         this.createdAt = createdAt;

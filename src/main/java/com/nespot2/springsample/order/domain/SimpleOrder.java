@@ -10,7 +10,7 @@ import java.time.OffsetDateTime;
 @ToString(exclude = {"member"})
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-public class Order {
+public class SimpleOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,7 +33,7 @@ public class Order {
     private Member member;
 
     @Builder
-    public Order(OffsetDateTime modifiedAt, OffsetDateTime createdAt, int price, OrderStatus status, Member member) {
+    public SimpleOrder(OffsetDateTime modifiedAt, OffsetDateTime createdAt, int price, OrderStatus status, Member member) {
         this.modifiedAt = modifiedAt;
         this.createdAt = createdAt;
         this.price = price;

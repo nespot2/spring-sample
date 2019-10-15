@@ -18,7 +18,7 @@ public class OrderDetail {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
-    private Order order;
+    private SimpleOrder order;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_detail_id")
@@ -34,7 +34,7 @@ public class OrderDetail {
     private OrderStatus orderStatus;
 
     @Builder
-    public OrderDetail(Order order, ItemDetail itemDetail, OffsetDateTime modifiedAt, OffsetDateTime createdAt, OrderStatus orderStatus) {
+    public OrderDetail(SimpleOrder order, ItemDetail itemDetail, OffsetDateTime modifiedAt, OffsetDateTime createdAt, OrderStatus orderStatus) {
         this.order = order;
         this.itemDetail = itemDetail;
         this.modifiedAt = modifiedAt;
